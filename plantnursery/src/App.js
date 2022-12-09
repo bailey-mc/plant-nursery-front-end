@@ -5,18 +5,25 @@ import Plant from './components/plant'
 import New from './components/new'
 
 function App() {
+
+  // HOOKS
   const [plants, setPlants] = useState([])
 
-    useEffect(()=> {
-      axios
-           .get('herokuapiurl')
-           .then((response)=> {
-            setPlants(response.data)
-           })
+  const getPlants = () => {
+    axios
+    .get('herokuapiurl')
+    .then((response)=> {
+     setPlants(response.data)
     })
+  }
+  
+  useEffect(()=> {
+     getPlants() 
+  }, [])
   
   return (
-    <div className="App">
+    <div>
+      <h1>Plants Paradise</h1>
       <New/>
         {
           plants.map((plant) => {

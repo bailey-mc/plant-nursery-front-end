@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import React from 'react';
 import axios from 'axios'
 
 const New = (props) => {
-    const [newPlantName, setNewPlantName] = useState()
-    const [newPlantBotanicalName, setNewPlantBotanicalName] = useState()
-    const [newPlantType, setNewPlantType] = useState()
-    const [newPlantTemperature, setNewPlantTemperature] = useState()
-    const [newPlantLight, setNewPlantLight] = useState()
-    const [newPlantWater, setNewPlantWater] = useState()
-    const [newPlantPrice, setNewPlantPrice] = useState()
-    const [newPlantImage, setNewPlantImage] = useState()
-    const [inStock, setInStock] = useState()
+    const [newPlantName, setNewPlantName] = useState('')
+    const [newPlantBotanicalName, setNewPlantBotanicalName] = useState('')
+    const [newPlantType, setNewPlantType] = useState('')
+    const [newPlantTemperature, setNewPlantTemperature] = useState('')
+    const [newPlantLight, setNewPlantLight] = useState('')
+    const [newPlantWater, setNewPlantWater] = useState('')
+    const [newPlantPrice, setNewPlantPrice] = useState('')
+    const [newPlantImage, setNewPlantImage] = useState('')
+    const [newPlantStock, setNewPlantStock] = useState('')
 
     const handleNewPlantName = (event) => {
         setNewPlantName(event.target.value)
@@ -37,19 +37,15 @@ const New = (props) => {
     const handleNewPlantImage = (event) => {
         setNewPlantImage(event.target.value)
     }
-    const handleInStock = (event) => {
-        if (event.target.checked === true) {
-            setInStock(true)
-        } else {
-            setInStock(false)
-        }
+    const handleNewPlantStock = (event) => {
+        setNewPlantStock(event.target.value)
     }
-
     const handleNewPlant = (event) => {
         event.preventDefault()
         event.target.reset()
 
-        axios.post ('url',
+        axios.post(
+            'localhost:3001/plantnursery',
             {
                 name: newPlantName,
                 botanicalName: newPlantBotanicalName,
@@ -59,16 +55,26 @@ const New = (props) => {
                 waterAmount: newPlantWater,
                 price: newPlantPrice,
                 image: newPlantImage,
-                inStock: inStock,
+                inStock: newPlantStock,
             }
-        ).then (() => {
-            axios
-                .get('ur')
-                .then((response) => {
-                    console.log(response.data);
-                })
-        } )
-
+        )
+        .then (() => {
+            props.getPlants();
+            setNewPlantName('');
+            setNewPlantBotanicalName('');
+            setNewPlantType('');
+            setNewPlantTemperature('');
+            setNewPlantLight('');
+            setNewPlantWater('');
+            setNewPlantPrice('');
+            setNewPlantImage('');
+            setNewPlantStock('');
+            // axios
+            //     .get('ur')
+            //     .then((response) => {
+            //         console.log(response.data);
+            //     })
+        })
     }
 
     return(
@@ -82,7 +88,7 @@ const New = (props) => {
                 <input type="text" placeholder="Amount of Water" onChange={handleNewPlantWater}/><br/>
                 <input type="number" placeholder="Price" onChange={handleNewPlantPrice}/><br/>
                 <input type="text" placeholder="Image" onChange={handleNewPlantImage}/><br/>
-                <input type="checkbox" onChange={handleInStock} /> In Stock?<br/>
+                <input type="number" placeholder="# in stock" onChange={handleNewPlantStock} /><br/>
                 <button type="submit">Submit</button>
             </form>
         </div>
