@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+/* image */
+img {
+  max-width: 250px;
+}
+
+/* card styling */
+.card {
+  max-width: 300px;
+  margin: 10px;
+}
+
+.plants-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
