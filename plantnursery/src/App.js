@@ -1,17 +1,19 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
-import Plant from './components/plant'
-import New from './components/new'
+import Plant from './components/Plant'
+import New from './components/NewPlant'
 
 function App() {
-
   // HOOKS
   const [plants, setPlants] = useState([])
 
   const getPlants = () => {
     axios
-    .get('herokuapiurl')
+    .get(
+      'http://localhost:3001/plantnursery'
+      )
     .then((response)=> {
      setPlants(response.data)
     })
