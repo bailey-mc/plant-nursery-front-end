@@ -9,7 +9,7 @@ function App() {
 
     useEffect(()=> {
       axios
-           .get('herokuapiurl')
+           .get('http://localhost:3001/plantnursery')
            .then((response)=> {
             setPlants(response.data)
            })

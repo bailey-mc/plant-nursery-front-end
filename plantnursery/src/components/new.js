@@ -49,7 +49,7 @@ const New = (props) => {
         event.preventDefault()
         event.target.reset()
 
-        axios.post ('url',
+        axios.post ('http://localhost:3001/plantnursery',
             {
                 name: newPlantName,
                 botanicalName: newPlantBotanicalName,
@@ -63,7 +63,7 @@ const New = (props) => {
             }
         ).then (() => {
             axios
-                .get('ur')
+                .get('http://localhost:3001/plantnursery')
                 .then((response) => {
                     console.log(response.data);
                 })
