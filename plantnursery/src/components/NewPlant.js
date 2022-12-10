@@ -84,8 +84,8 @@ const New = (props) => {
                 <input type="text" placeholder="Botanical Name" onChange={handleNewPlantBotanicalName}/><br/>
                 <input type="text" placeholder="Type" onChange={handleNewPlantType}/><br/>
                 <input type="text" placeholder="Temperature" onChange={handleNewPlantTemperature}/><br/>
-                <input type="text" placeholder="Amount Of Light" onChange={handleNewPlantLight}/><br/>
-                <input type="text" placeholder="Amount of Water" onChange={handleNewPlantWater}/><br/>
+                <input type="text" placeholder="Amt of light needed" onChange={handleNewPlantLight}/><br/>
+                <input type="text" placeholder="Amt of water needed" onChange={handleNewPlantWater}/><br/>
                 <input type="number" placeholder="Price" onChange={handleNewPlantPrice}/><br/>
                 <input type="text" placeholder="Image" onChange={handleNewPlantImage}/><br/>
                 <input type="number" placeholder="# in stock" onChange={handleNewPlantStock} /><br/>
