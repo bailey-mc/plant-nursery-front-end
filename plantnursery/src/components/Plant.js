@@ -7,15 +7,15 @@ const Plant = (props) => {
     <Card>
       <Card.Body>
         <div>
-          <img src={props.plant.image} />
-          <p>{props.plant.name}</p>
-          <p>{props.plant.botaniclName}</p>
-          <p>{props.plant.type}</p>
-          <p>{props.plant.temperature}</p>
-          <p>{props.plant.requiresLight}</p>
-          <p>{props.plant.waterAmount}</p>
-          <p>{props.plant.price}</p>
-          <p>{props.plant.inStock}</p>
+          <img className="mb-2" src={props.plant.image} />
+          <p>Name: {props.plant.name}</p>
+          <p>Botanical name: {props.plant.botanicalName}</p>
+          <p>Type: {props.plant.type}</p>
+          <p>Thrives in this environment: {props.plant.temperature}</p>
+          <p>Light required: {props.plant.requiresLight}</p>
+          <p>Water Amount: {props.plant.waterAmount}</p>
+          <p>Price: ${props.plant.price}</p>
+          <p>In stock: {props.plant.inStock}</p>
         </div>
       </Card.Body>
     </Card>
