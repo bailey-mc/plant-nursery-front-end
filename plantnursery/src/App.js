@@ -26,7 +26,8 @@ function App() {
   return (
     <div>
       <h1>Plants Paradise</h1>
-      <New/>
+      
+        <div className="plants-container">
         {
           plants.map((plant) => {
             return (
@@ -34,6 +35,8 @@ function App() {
             )
           })
         }
+        </div>
+        <New/>
     </div>
   );
 }
