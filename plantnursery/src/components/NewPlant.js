@@ -45,7 +45,7 @@ const New = (props) => {
     event.target.reset();
 
     axios
-      .post("localhost:3001/plantnursery", {
+      .post("http://localhost:3001/plantnursery", {
         name: newPlantName,
         botanicalName: newPlantBotanicalName,
         type: newPlantType,
