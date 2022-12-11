@@ -4,6 +4,7 @@ import axios from 'axios';
 import './App.css';
 import Plant from './components/Plant'
 import New from './components/NewPlant'
+import EditPlant from './components/EditPlant';
 
 function App() {
   // HOOKS
@@ -31,7 +32,11 @@ function App() {
         {
           plants.map((plant) => {
             return (
-              <Plant plant={plant}/>
+              <div>
+                <Plant plant={plant}/>
+                <EditPlant plant={ plant }/>
+              </div>
+              
             )
           })
         }
