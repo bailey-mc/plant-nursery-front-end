@@ -77,7 +77,7 @@ const New = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleNewPlant}>
+      <form className="new-plant-form" onSubmit={handleNewPlant}>
         <input
           type="text"
           placeholder="Common Name"
