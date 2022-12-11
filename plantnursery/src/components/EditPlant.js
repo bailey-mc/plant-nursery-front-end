@@ -135,7 +135,7 @@ const EditPlant = (props) => {
             onChange={handleUpdatePlantStock}
           />
           <br />
-          <button type="submit">Submit</button>
+          <button type="submit">Update</button>
         </form>
       </div>
     )
