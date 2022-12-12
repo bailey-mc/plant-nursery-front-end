@@ -16,7 +16,7 @@ const Plant = (props) => {
 // delete
 const handleDelete = () => {
   axios
-    .delete(`http://localhost:3001/plantnursery/${props.plant._id}`)
+    .delete(`https://ancient-lowlands-69118.herokuapp.com/plantnursery/${props.plant._id}`)
     .then (() => {
       props.getPlants()
       handleClose()

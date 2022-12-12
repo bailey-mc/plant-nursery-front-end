@@ -5,21 +5,27 @@ import axios from "axios";
 import "./App.css";
 import Plant from "./components/Plant";
 import New from "./components/NewPlant";
-import EditPlant from "./components/EditPlant";
+// import EditPlant from "./components/EditPlant";
 
 function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
 
+  // const client = axios.create({baseURL: 'https://ancient-lowlands-69118.herokuapp.com/'})
+
   const getPlants = () => {
-    axios.get("http://localhost:3001/plantnursery").then((response) => {
+    axios.get('https://ancient-lowlands-69118.herokuapp.com/plantnursery').then((response) => {
       setPlants(response.data);
     });
   };
 
   useEffect(() => {
-    getPlants();
+    // client.get('/plantnursery').then((response)=> {
+    //   setPlants(response.data);
+    getPlants()
+      
+    // })
   }, []);
 
   return (
