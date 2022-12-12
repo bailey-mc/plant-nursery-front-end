@@ -68,9 +68,8 @@ const EditPlant = (props) => {
     return (
       <div>
         <form onSubmit={
-           
                 handleUpdatePlant
-        }>
+                }>
           <input
             type="text"
             defaultValue={props.plant.name}
