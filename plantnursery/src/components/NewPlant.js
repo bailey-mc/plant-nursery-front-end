@@ -3,15 +3,15 @@ import React from "react";
 import axios from "axios";
 
 const New = (props) => {
-  const [newPlantName, setNewPlantName] = useState("");
-  const [newPlantBotanicalName, setNewPlantBotanicalName] = useState("");
-  const [newPlantType, setNewPlantType] = useState("");
-  const [newPlantTemperature, setNewPlantTemperature] = useState("");
-  const [newPlantLight, setNewPlantLight] = useState("");
-  const [newPlantWater, setNewPlantWater] = useState("");
-  const [newPlantPrice, setNewPlantPrice] = useState("");
-  const [newPlantImage, setNewPlantImage] = useState("");
-  const [newPlantStock, setNewPlantStock] = useState("");
+  const [newPlantName, setNewPlantName] = useState();
+  const [newPlantBotanicalName, setNewPlantBotanicalName] = useState();
+  const [newPlantType, setNewPlantType] = useState();
+  const [newPlantTemperature, setNewPlantTemperature] = useState();
+  const [newPlantLight, setNewPlantLight] = useState();
+  const [newPlantWater, setNewPlantWater] = useState();
+  const [newPlantPrice, setNewPlantPrice] = useState();
+  const [newPlantImage, setNewPlantImage] = useState();
+  const [newPlantStock, setNewPlantStock] = useState();
 
   const handleNewPlantName = (event) => {
     setNewPlantName(event.target.value);
@@ -44,8 +44,10 @@ const New = (props) => {
     event.preventDefault();
     event.target.reset();
 
+    
+
     axios
-      .post("http://localhost:3001/plantnursery", {
+      .post("https://ancient-lowlands-69118.herokuapp.com/plantnursery", {
         name: newPlantName,
         botanicalName: newPlantBotanicalName,
         type: newPlantType,
@@ -58,15 +60,7 @@ const New = (props) => {
       })
       .then(() => {
         props.getPlants();
-        setNewPlantName("");
-        setNewPlantBotanicalName("");
-        setNewPlantType("");
-        setNewPlantTemperature("");
-        setNewPlantLight("");
-        setNewPlantWater("");
-        setNewPlantPrice("");
-        setNewPlantImage("");
-        setNewPlantStock("");
+    
         // axios
         //     .get('ur')
         //     .then((response) => {

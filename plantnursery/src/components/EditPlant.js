@@ -45,7 +45,7 @@ const EditPlant = (props) => {
     const handleUpdatePlant = (plantData) => {
    
       axios
-        .put(`http://localhost:3001/plantnursery/${plantData._id}`, {
+        .put(`https://ancient-lowlands-69118.herokuapp.com/plantnursery${plantData._id}`, {
           name: updatePlantName,
           botanicalName: updatePlantBotanicalName,
           type: updatePlantType,
@@ -58,15 +58,7 @@ const EditPlant = (props) => {
         })
         .then((response) => {
           props.getPlants(response.data);
-          setUpdatePlantName("");
-          setUpdatePlantBotanicalName("");
-          setUpdatePlantType("");
-          setUpdatePlantTemperature("");
-          setUpdatePlantLight("");
-          setUpdatePlantWater("");
-          setUpdatePlantPrice("");
-          setUpdatePlantImage("");
-          setUpdatePlantStock("");
+     
          
         });
     };
