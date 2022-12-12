@@ -73,65 +73,83 @@ const EditPlant = (props) => {
   
     return (
       <div>
-        <form onSubmit={
+        <form className="edit-plant-form" onSubmit={
             (event) => {
                 handleUpdatePlant(props.plant)
             }
         }>
+          <label>
           <input
             type="text"
             defaultValue={props.plant.name}
             onChange={handleUpdatePlantName}
           />
-          <br />
+          </label>
+        
+          <label>
           <input
             type="text"
             defaultValue={props.plant.botanicalName}
             onChange={handleUpdatePlantBotanicalName}
           />
-          <br />
+          </label>
+         
+         <label>
           <input 
             type="text" 
             defaultValue={props.plant.type}
             onChange={handleUpdatePlantType} />
-          <br />
+          </label>
+
+          <label>
           <input
             type="text"
             placeholder="Temperature"
             defaultValue={props.plant.temperature}
             onChange={handleUpdatePlantTemperature}
           />
-          <br />
+         </label>
+
+         <label>
           <input
             type="text"
             defaultValue={props.plant.requiresLight}
             onChange={handleUpdatePlantLight}
           />
-          <br />
-          <input
+          </label>
+
+          <label>
+          <textarea 
             type="text"
             defaultValue={props.plant.waterAmount}
             onChange={handleUpdatePlantWater}
           />
-          <br />
+          </label>
+
+          <label>
           <input
             type="number"
             defaultValue={props. plant.price}
             onChange={handleUpdatePlantPrice}
           />
-          <br />
+          </label>
+
+          <label>
           <input 
             type="text" 
             defaultValue={props.plant.image}
             onChange={handleUpdatePlantImage} />
-          <br />
+          </label>
+
+          <label>
           <input
             type="number"
             defaultValue={props.plant.inStock}
             onChange={handleUpdatePlantStock}
           />
-          <br />
-          <button Name="button" classtype="submit">Update</button>
+          </label>
+          <br/>
+          <button className="button" classtype="submit">Update</button>
         </form>
       </div>
     )
