@@ -3,23 +3,17 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const EditPlant = (props) => {
-    // const [updatePlantName, setUpdatePlantName] = useState()
-    // const [updatePlantBotanicalName, setUpdatePlantBotanicalName] = useState()
-    // const [updatePlantType, setUpdatePlantType] = useState()
-    // const [updatePlantTemperature, setUpdatePlantTemperature] = useState()
-    // const [updatePlantLight, setUpdatePlantLight] = useState()
-    // const [updatePlantWaters, setUpdatePlantWaters] = useState()
-    // const [updatePlant]
 
-    const [updatePlantName, setUpdatePlantName] = useState("");
-    const [updatePlantBotanicalName, setUpdatePlantBotanicalName] = useState("");
-    const [updatePlantType, setUpdatePlantType] = useState("");
-    const [updatePlantTemperature, setUpdatePlantTemperature] = useState("");
-    const [updatePlantLight, setUpdatePlantLight] = useState("");
-    const [updatePlantWater, setUpdatePlantWater] = useState("");
-    const [updatePlantPrice, setUpdatePlantPrice] = useState("");
-    const [updatePlantImage, setUpdatePlantImage] = useState("");
-    const [updatePlantStock, setUpdatePlantStock] = useState("");
+
+    const [updatePlantName, setUpdatePlantName] = useState();
+    const [updatePlantBotanicalName, setUpdatePlantBotanicalName] = useState();
+    const [updatePlantType, setUpdatePlantType] = useState();
+    const [updatePlantTemperature, setUpdatePlantTemperature] = useState();
+    const [updatePlantLight, setUpdatePlantLight] = useState();
+    const [updatePlantWater, setUpdatePlantWater] = useState();
+    const [updatePlantPrice, setUpdatePlantPrice] = useState();
+    const [updatePlantImage, setUpdatePlantImage] = useState();
+    const [updatePlantStock, setUpdatePlantStock] = useState();
   
     const handleUpdatePlantName = (event) => {
       setUpdatePlantName(event.target.value);
@@ -48,12 +42,10 @@ const EditPlant = (props) => {
     const handleUpdatePlantStock = (event) => {
       setUpdatePlantStock(event.target.value);
     };
-    const handleUpdatePlant = (event) => {
-      event.preventDefault();
-      event.target.reset();
-  
+    const handleUpdatePlant = (plantData) => {
+   
       axios
-        .put(`localhost:3001/plantnursery/${props.plant._id}`, {
+        .put(`http://localhost:3001/plantnursery/${plantData._id}`, {
           name: updatePlantName,
           botanicalName: updatePlantBotanicalName,
           type: updatePlantType,
@@ -81,7 +73,11 @@ const EditPlant = (props) => {
   
     return (
       <div>
-        <form onSubmit={handleUpdatePlant}>
+        <form onSubmit={
+            (event) => {
+                handleUpdatePlant(props.plant)
+            }
+        }>
           <input
             type="text"
             defaultValue={props.plant.name}
