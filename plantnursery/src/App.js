@@ -11,6 +11,7 @@ function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
+  const [showEditForm, setShowEditForm] = useState(true)
 
   // const client = axios.create({baseURL: 'https://ancient-lowlands-69118.herokuapp.com/'})
 
@@ -31,7 +32,7 @@ function App() {
   return (
     <div>
       <h1>
-        Plants Parad<i class="bi bi-tree"></i>se
+        Plants Parad<i className="bi bi-tree"></i>se
       </h1>
       <div className="buttons-container">
         <button
