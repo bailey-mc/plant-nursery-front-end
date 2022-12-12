@@ -37,6 +37,14 @@
   }
 }
 
+/* body {
+  background-image: url('https://media.istockphoto.com/id/1009948130/vector/silhouettes-collection-of-decor-house-indoor-garden-plants-in-pots-and-stands-graphic-set.jpg?s=612x612&w=0&k=20&c=UbdVY6nVsO_i4x1QuHUZ28-Nmc82tIRPAgBK-WUKT04=');
+  background-size: 1000px;
+  background-repeat: no-repeat;
+  background-position: 50% 70%;
+  opacity: 0.;
+} */
+
 /* image */
 img {
   max-width: 300px;
@@ -50,6 +58,7 @@ img {
   margin: 10px;
   border-width: 2px;
   border-color: #DDE5B6;
+  /* background-color: #FAF8EB; */
 }
 
 .plants-container {
@@ -100,6 +109,12 @@ h2 {
   border-width: 0;
   text-transform: uppercase;
   font-weight: bold;
+  background-color: #E9EDC9;
+}
+
+.buttons-container button:hover {
+  background-color: #D4A373;
+  color: white;
 }
 /*  */
 
@@ -111,6 +126,12 @@ h2 {
   padding: 8px;
   font-family: 'Patrick Hand SC', cursive;
   font-size: 20px;
+  background-color: #E9EDC9;
+}
+
+.button:hover {
+  background-color: #D4A373;
+  color: white;
 }
 /*  */
 
@@ -144,4 +165,9 @@ h2 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2px;
+}
+
+.edit-plant-form input {
+  width: 100%
+  /* color: #D4A373; */
 }
