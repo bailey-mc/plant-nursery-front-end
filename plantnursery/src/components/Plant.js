@@ -34,7 +34,7 @@ const handleDelete = () => {
           <button className="button" onClick={handleDelete}>Delete Listing</button>
         </div>
         {showEditForm ? (
-          <EditPlant plant={props.plant} getPlants={props.getPlants} setShowEditForm={setShowEditForm}/>
+          <EditPlant plant={props.plant} getPlants={props.getPlants} setShowEditForm={setShowEditForm} setPlants={props.setPlants}/>
         ) : null} 
       </Card.Body>
     </Card>

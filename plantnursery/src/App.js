@@ -61,7 +61,7 @@ function App() {
           <section>
             <h2>Add New Plant Listing</h2>
           </section>
-          <New getPlants={getPlants} setShowPlants={setShowPlants} />
+          <New getPlants={getPlants} setPlants={setPlants} setShowPlants={setShowPlants} />
         </>
       )}
     </div>

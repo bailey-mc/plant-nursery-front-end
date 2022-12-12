@@ -17,6 +17,7 @@ const EditPlant = (props) => {
   
     const handleUpdatePlantName = (event) => {
       setUpdatePlantName(event.target.value);
+      console.log(updatePlantName);
     };
     const handleUpdatePlantBotanicalName = (event) => {
       setUpdatePlantBotanicalName(event.target.value);
@@ -42,10 +43,11 @@ const EditPlant = (props) => {
     const handleUpdatePlantStock = (event) => {
       setUpdatePlantStock(event.target.value);
     };
-    const handleUpdatePlant = (plantData) => {
-   
+    const handleUpdatePlant = () => {
+        
+        
       axios
-        .put(`https://ancient-lowlands-69118.herokuapp.com/plantnursery${plantData._id}`, {
+        .put(`https://ancient-lowlands-69118.herokuapp.com/plantnursery/${props.plant._id}`, {
           name: updatePlantName,
           botanicalName: updatePlantBotanicalName,
           type: updatePlantType,
@@ -56,19 +58,18 @@ const EditPlant = (props) => {
           image: updatePlantImage,
           inStock: updatePlantStock,
         })
-        .then((response) => {
-          props.getPlants(response.data);
-     
+        .then(() => {
+            props.getPlants();
+        })
          
-        });
+        
     };
   
     return (
       <div>
         <form onSubmit={
-            (event) => {
-                handleUpdatePlant(props.plant)
-            }
+           
+                handleUpdatePlant
         }>
           <input
             type="text"

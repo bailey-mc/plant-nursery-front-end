@@ -60,12 +60,7 @@ const New = (props) => {
       })
       .then(() => {
         props.getPlants();
-    
-        // axios
-        //     .get('ur')
-        //     .then((response) => {
-        //         console.log(response.data);
-        //     })
+  
       });
   };
 
