@@ -133,3 +133,15 @@ h2 {
   color: #D4A373;
 }
 /*  */
+
+/* edit plant form */
+.edit-plant-form {
+  max-width: 350px;
+  margin: auto;
+}
+
+.edit-plant-form label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
