@@ -19,19 +19,19 @@ const handleDelete = () => {
       <Card.Body>
         <div>
           <img className="mb-2" src={props.plant.image} />
-          <p>Name: {props.plant.name}</p>
-          <p>Botanical name: {props.plant.botanicalName}</p>
-          <p>Type: {props.plant.type}</p>
-          <p>Thrives in this environment: {props.plant.temperature}</p>
-          <p>Light required: {props.plant.requiresLight}</p>
-          <p>Water Amount: {props.plant.waterAmount}</p>
-          <p>Price: ${props.plant.price}</p>
-          <p>In stock: {props.plant.inStock}</p>
-          <button onClick={() => {
+          <span>Name:</span> {props.plant.name}<br/>
+          <span>Botanical name:</span> {props.plant.botanicalName}<br/>
+          <span>Type:</span> {props.plant.type}<br/>
+          <span>Thrives in this environment:</span> {props.plant.temperature}<br/>
+          <span>Light required:</span> {props.plant.requiresLight}<br/>
+          <span>Water Amount:</span> {props.plant.waterAmount}<br/>
+          <span>Price:</span> ${props.plant.price}<br/>
+          <span>In stock:</span> {props.plant.inStock}<br/>
+          <button className="button" onClick={() => {
             {setShowEditForm(prevShowEditForm => !prevShowEditForm)}}}>
               {showEditForm ? 'Hide' : 'Show'} Edit Form</button>
 
-          <button onClick={handleDelete}>Delete Listing</button>
+          <button className="button" onClick={handleDelete}>Delete Listing</button>
         </div>
         {showEditForm ? (
           <EditPlant plant={props.plant} getPlants={props.getPlants} setShowEditForm={setShowEditForm}/>

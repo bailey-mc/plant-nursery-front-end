@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
@@ -23,7 +24,9 @@ function App() {
 
   return (
     <div>
-      <h1>Plants Paradise</h1>
+      <h1>
+        Plants Parad<i class="bi bi-tree"></i>se
+      </h1>
       <div className="buttons-container">
         <button
           onClick={() => {
@@ -50,7 +53,7 @@ function App() {
       ) : (
         <>
           <section>
-            <h2>Add a new listing</h2>
+            <h2>Add New Plant Listing</h2>
           </section>
           <New getPlants={getPlants} setShowPlants={setShowPlants} />
         </>

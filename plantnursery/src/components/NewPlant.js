@@ -77,54 +77,39 @@ const New = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleNewPlant}>
-        <input
-          type="text"
-          placeholder="Common Name"
-          onChange={handleNewPlantName}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="Botanical Name"
-          onChange={handleNewPlantBotanicalName}
-        />
-        <br />
-        <input type="text" placeholder="Type" onChange={handleNewPlantType} />
-        <br />
-        <input
-          type="text"
-          placeholder="Temperature"
-          onChange={handleNewPlantTemperature}
-        />
-        <br />
-        <input
-          type="text"
+      <form className="new-plant-form" onSubmit={handleNewPlant}>
+        <label>
+        <span>Name:</span> <input type="text" placeholder="Common Name" onChange={handleNewPlantName}/>
+        </label>
+        <label>
+        <span>Botanical name:</span> <input type="text" placeholder="Botanical Name" onChange={handleNewPlantBotanicalName}/>
+        </label>
+        <label>
+        <span>Type:</span> <input type="text" placeholder="Type" onChange={handleNewPlantType} />
+        </label>
+        <label>
+        <span>Temperature:</span> <input type="text" placeholder="Temp it needs" onChange={handleNewPlantTemperature}/>
+        </label>
+        <label>
+        <span>Light required:</span> <input type="text"
           placeholder="Amt of light needed"
-          onChange={handleNewPlantLight}
-        />
-        <br />
-        <input
-          type="text"
-          placeholder="Amt of water needed"
-          onChange={handleNewPlantWater}
-        />
-        <br />
-        <input
-          type="number"
-          placeholder="Price"
-          onChange={handleNewPlantPrice}
-        />
-        <br />
-        <input type="text" placeholder="Image" onChange={handleNewPlantImage} />
-        <br />
-        <input
-          type="number"
-          placeholder="# in stock"
-          onChange={handleNewPlantStock}
-        />
-        <br />
-        <button type="submit">Submit</button>
+          onChange={handleNewPlantLight}/>
+        </label>
+        <label>
+        <span>Water needed:</span> <input type="text" placeholder="Amt of water needed" onChange={handleNewPlantWater}/>
+        </label>
+        <label>
+        <span>Price:</span> <input type="number" placeholder="Price"
+          onChange={handleNewPlantPrice}/>
+        </label>
+        <label>
+        <span>Image link:</span> <input type="text" placeholder="Image" onChange={handleNewPlantImage} />
+        </label>
+        <label>
+        <span># in stock:</span> <input type="number" placeholder="# in stock" onChange={handleNewPlantStock}/>
+        </label>
+        <br/>
+        <button className="button" type="submit">Submit</button>
       </form>
     </div>
   );
