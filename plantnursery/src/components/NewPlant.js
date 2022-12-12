@@ -48,6 +48,8 @@ const New = (props) => {
 
     axios
       .post("https://ancient-lowlands-69118.herokuapp.com/plantnursery", {
+        // .post
+        //   ('http:localhost:3001/plantnursery', {
         name: newPlantName,
         botanicalName: newPlantBotanicalName,
         type: newPlantType,
@@ -60,7 +62,13 @@ const New = (props) => {
       })
       .then(() => {
         props.getPlants();
-  
+        props.setShowPlants(true);
+    
+        // axios
+        //     .get('ur')
+        //     .then((response) => {
+        //         console.log(response.data);
+        //     })
       });
   };
 

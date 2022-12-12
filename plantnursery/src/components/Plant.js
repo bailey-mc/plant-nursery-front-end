@@ -1,16 +1,25 @@
 import axios, { AxiosHeaders } from "axios";
 import React, {useState} from "react";
 import Card from 'react-bootstrap/Card'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 import EditPlant from './EditPlant'
 
 const Plant = (props) => {
   const [showEditForm, setShowEditForm] = useState(false)
+  const [showModal, setShowModal] = useState(false)
 
+  // modal
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
+// delete
 const handleDelete = () => {
   axios
     .delete(`https://ancient-lowlands-69118.herokuapp.com/plantnursery/${props.plant._id}`)
     .then (() => {
       props.getPlants()
+      handleClose()
     })
 }
 
@@ -31,8 +40,26 @@ const handleDelete = () => {
             {setShowEditForm(prevShowEditForm => !prevShowEditForm)}}}>
               {showEditForm ? 'Hide' : 'Show'} Edit Form</button>
 
-          <button className="button" onClick={handleDelete}>Delete Listing</button>
+          <>
+          <button className="button" onClick={handleShow}>Delete Listing</button>
+            <Modal show={showModal} onHide={handleClose}>
+              <Modal.Header closeButton>
+                <Modal.Title>Are you sure you want to delete this listing?</Modal.Title>
+              </Modal.Header>
+                <Modal.Body>Are you positive?</Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Changed my mind!
+                  </Button>
+                  <Button variant="danger" onClick={handleDelete}>
+                    I'll take it!
+                  </Button>
+                </Modal.Footer>
+            </Modal>
+          </>
+
         </div>
+      
         {showEditForm ? (
           <EditPlant plant={props.plant} getPlants={props.getPlants} setShowEditForm={setShowEditForm} setPlants={props.setPlants}/>
         ) : null} 
