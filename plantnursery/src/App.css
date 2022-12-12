@@ -105,10 +105,11 @@ h2 {
 .buttons-container button {
   border-radius: 10px;
   margin: 10px;
-  padding: 8px;
+  padding: 10px;
   border-width: 0;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 18px;
   background-color: #E9EDC9;
 }
 
