@@ -79,9 +79,10 @@ const EditPlant = (props) => {
             }
         }>
           <label>
-          <input
+          <input className="mt-2"
             type="text"
             defaultValue={props.plant.name}
+            placeholder="Name"
             onChange={handleUpdatePlantName}
           />
           </label>
@@ -90,6 +91,7 @@ const EditPlant = (props) => {
           <input
             type="text"
             defaultValue={props.plant.botanicalName}
+            placeholder="Botanical name"
             onChange={handleUpdatePlantBotanicalName}
           />
           </label>
@@ -98,6 +100,7 @@ const EditPlant = (props) => {
           <input 
             type="text" 
             defaultValue={props.plant.type}
+            placeholder="Type of plant"
             onChange={handleUpdatePlantType} />
           </label>
 
@@ -106,6 +109,7 @@ const EditPlant = (props) => {
             type="text"
             placeholder="Temperature"
             defaultValue={props.plant.temperature}
+            placeholder="Temperature plant thrives in"
             onChange={handleUpdatePlantTemperature}
           />
          </label>
@@ -114,14 +118,16 @@ const EditPlant = (props) => {
           <input
             type="text"
             defaultValue={props.plant.requiresLight}
+            placeholder="Amount of light needed"
             onChange={handleUpdatePlantLight}
           />
           </label>
 
           <label>
-          <textarea 
+          <input 
             type="text"
             defaultValue={props.plant.waterAmount}
+            placeholder="Amount of water needed"
             onChange={handleUpdatePlantWater}
           />
           </label>
@@ -130,6 +136,7 @@ const EditPlant = (props) => {
           <input
             type="number"
             defaultValue={props. plant.price}
+            placeholder="Price"
             onChange={handleUpdatePlantPrice}
           />
           </label>
@@ -138,6 +145,7 @@ const EditPlant = (props) => {
           <input 
             type="text" 
             defaultValue={props.plant.image}
+            placeholder="image link goes here"
             onChange={handleUpdatePlantImage} />
           </label>
 
@@ -145,6 +153,7 @@ const EditPlant = (props) => {
           <input
             type="number"
             defaultValue={props.plant.inStock}
+            placeholder="# in stock"
             onChange={handleUpdatePlantStock}
           />
           </label>
