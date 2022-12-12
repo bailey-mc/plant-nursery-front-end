@@ -46,7 +46,9 @@ img {
 /* card styling */
 .card {
   max-width: 300px;
+  width: 100%;
   margin: 10px;
+  border-width: 2px;
   border-color: #DDE5B6;
 }
 
@@ -72,12 +74,15 @@ h1 {
   text-align: center;
   margin: 20px;
   font-family: 'Limelight', cursive;
-  color: #9BA975;
+  font-size: 60px;
+  color: #9BA975; 
 }
 
 h2 {
   text-align: center;
   margin: 20px;
+  font-family: 'Limelight', cursive;
+  color: #9BA975; 
 }
 
 /* hide / show buttons */
@@ -96,19 +101,35 @@ h2 {
   text-transform: uppercase;
   font-weight: bold;
 }
+/*  */
 
 /* edit / delete button */
 .button {
   border-radius: 10px;
-  border-width: 0;
+  border-width: 0px;
   margin: 5px;
   padding: 8px;
   font-family: 'Patrick Hand SC', cursive;
   font-size: 20px;
 }
+/*  */
 
 /* new plant form */
 .new-plant-form {
   max-width: 350px;
   margin: auto;
 }
+
+.new-plant-form label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.new-plant-form span {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: #D4A373;
+}
+/*  */
