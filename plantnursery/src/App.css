@@ -45,6 +45,26 @@
   opacity: 0.;
 } */
 
+.demo-wrap {
+  position: relative;
+  z-index: -1;
+}
+.demo-wrap:before {
+  content: ' ';
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background-image: url('https://media.istockphoto.com/id/1351687680/photo/houseplant-strelitzia-nicolai.jpg?s=612x612&w=0&k=20&c=WdJElMQNmeMzRXKqNZeJ3AoEVMFooKWVsIDkULrH0KM=');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  content: '';
+}
+
 /* image */
 img {
   max-width: 300px;
@@ -94,12 +114,22 @@ h2 {
   color: #9BA975; 
 }
 
+.about-us {
+  font-family: 'Mallanna', sans-serif;
+  font-size: 23px;
+  align-content: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
 /* hide / show buttons */
 .buttons-container {
   display: flex;
   justify-content: center;
   width: 100%;
   font-family: 'Mallanna', sans-serif;
+
 }
 
 .buttons-container button {
