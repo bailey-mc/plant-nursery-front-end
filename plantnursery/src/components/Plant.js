@@ -36,12 +36,23 @@ const handleDelete = () => {
           <span>Water Amount:</span> {props.plant.waterAmount}<br/>
           <span>Price:</span> ${props.plant.price}<br/>
           <span>In stock:</span> {props.plant.inStock}<br/>
-          <button className="button" onClick={() => {
-            {setShowEditForm(prevShowEditForm => !prevShowEditForm)}}}>
-              {showEditForm ? 'Hide' : 'Show'} Edit Form</button>
+
+          {props.currentUser.username ?
+            <button className="button" onClick={() => {
+              {setShowEditForm(prevShowEditForm => !prevShowEditForm)}}}>
+                {showEditForm ? 'Hide' : 'Show'} Edit Form</button>
+          :
+            null
+          }
 
           <>
+
+          {props.currentUser.username ?
           <button className="button" onClick={handleShow}>Delete Listing</button>
+            
+          :
+            null
+          }
             <Modal show={showModal} onHide={handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Are you sure you want to delete this listing?</Modal.Title>
@@ -61,7 +72,7 @@ const handleDelete = () => {
         </div>
       
         {showEditForm ? (
-          <EditPlant plant={props.plant} getPlants={props.getPlants} setShowEditForm={setShowEditForm}/>
+          <EditPlant plant={props.plant} getPlants={props.getPlants} setShowEditForm={setShowEditForm} setPlants={props.setPlants}/>
         ) : null} 
       </Card.Body>
     </Card>
