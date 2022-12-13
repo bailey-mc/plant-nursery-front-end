@@ -106,6 +106,7 @@ h2 {
   color: #9BA975; 
 }
 
+/* about us */
 .about-us {
   font-family: 'Mallanna', sans-serif;
   font-size: 23px;
@@ -114,6 +115,57 @@ h2 {
   width: 100%;
   margin: auto;
 }
+
+#about {
+  color: #D4A373;
+}
+
+.header {
+  display: flex;
+}
+
+.header > div:nth-child(1),
+.header > div:nth-child(3) {
+  width: 20%;
+}
+
+.header > div:nth-child(2) {
+  width: 60%;
+}
+
+.header nav {
+  display: flex;
+  height: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .header > div:nth-child(1) {
+    width: 0;
+  }
+
+  .header > div:nth-child(2) {
+    width: 80%;
+  }
+}
+
+.header a {
+  text-decoration: none;
+  color: #D4A373;
+  font-size: 20px;
+  float: right;
+  margin: auto;
+  width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* position: top; */
+  
+}
+
+a:hover {
+  color: #9BA975;
+  font-weight: bold;
+}
+/*  */
 
 /* hide / show buttons */
 .buttons-container {
@@ -194,3 +246,9 @@ h2 {
   width: 100%
   /* color: #D4A373; */
 }
+
+/* icon styling */
+.bi {
+  color: #D4A373;
+}
+
