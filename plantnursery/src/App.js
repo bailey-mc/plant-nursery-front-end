@@ -43,10 +43,15 @@ function App() {
     <Router>
       <div>
         <div className="demo-wrap"></div>
-        <h1>
-          Plants Parad<i className="bi bi-tree"></i>se
-        </h1>
-        {/* <div className="buttons-container">
+        <div className="header">
+          {/* empty div for spacing */}
+          <div></div>
+          <div>
+            <h1>
+              Plants Parad<i className="bi bi-tree"></i>se
+            </h1>
+          </div>
+          {/* <div className="buttons-container">
           <button
             onClick={() => {
               setShowPlants(true);
@@ -62,67 +67,65 @@ function App() {
             Add New Plant Listing
           </button>
         </div> */}
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-            </ul>
-          </nav>
-          <Routes>
-            <Route path="/about" element={<About />} />
-            <Route
-              path="/"
-              element={
-                <>
-                  <div className="buttons-container">
-                    <button
-                      onClick={() => {
-                        setShowPlants(true);
-                      }}
-                    >
-                      Show All Plants
-                    </button>
-                    <button
-                      onClick={() => {
-                        setShowPlants(false);
-                      }}
-                    >
-                      Add New Plant Listing
-                    </button>
-                  </div>
-                  {showPlants ? (
-                    <div className="plants-container">
-                      {plants.map((plant, index) => {
-                        return (
-                          <Plant
-                            plant={plant}
-                            getPlants={getPlants}
-                            key={index}
-                          />
-                        );
-                      })}
-                    </div>
-                  ) : (
-                    <>
-                      <section id="new-listing">
-                        <h2>Add New Plant Listing</h2>
-                      </section>
-                      <New
-                        getPlants={getPlants}
-                        setShowPlants={setShowPlants}
-                      />
-                    </>
-                  )}
-                </>
-              }
-            />
-          </Routes>
+          <div>
+            <nav>
+              {/* <ul>
+              <li> */}
+              <Link to="/">Home</Link>
+              {/* </li>
+              <li> */}
+              <Link to="/about">About</Link>
+              {/* </li>
+            </ul> */}
+            </nav>
+          </div>
         </div>
+        <Routes>
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <div className="buttons-container">
+                  <button
+                    onClick={() => {
+                      setShowPlants(true);
+                    }}
+                  >
+                    Show All Plants
+                  </button>
+                  <button
+                    onClick={() => {
+                      setShowPlants(false);
+                    }}
+                  >
+                    Add New Plant Listing
+                  </button>
+                </div>
+                {showPlants ? (
+                  <div className="plants-container">
+                    {plants.map((plant, index) => {
+                      return (
+                        <Plant
+                          plant={plant}
+                          getPlants={getPlants}
+                          key={index}
+                        />
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <>
+                    <section id="new-listing">
+                      <h2>Add New Plant Listing</h2>
+                    </section>
+                    <New getPlants={getPlants} setShowPlants={setShowPlants} />
+                  </>
+                )}
+              </>
+            }
+          />
+        </Routes>
       </div>
     </Router>
   );
