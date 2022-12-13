@@ -49,10 +49,10 @@ const handleDelete = () => {
                 <Modal.Body>Are you positive?</Modal.Body>
                 <Modal.Footer>
                   <Button variant="secondary" onClick={handleClose}>
-                    Changed my mind!
+                    Cancel
                   </Button>
                   <Button variant="danger" onClick={handleDelete}>
-                    I'll take it!
+                    Delete
                   </Button>
                 </Modal.Footer>
             </Modal>
