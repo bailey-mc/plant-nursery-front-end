@@ -1,34 +1,17 @@
-# Getting Started with Create React App
+# Plant-Nursery-Front-End
+## An app used to list different types of plants for sale.
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies used:
 
-## Available Scripts
+- Bootstrap, React Router, React, Express, MongoDB, Heroku
+---
+## Sources:
 
-In the project directory, you can run:
+- For react router nav links: `https://reactrouter.com/en/main/upgrading/v5`
 
-### `npm start`
+- I used bootstrap to style the card and card body on the `show plants` page. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- I used bootstrap modal to prompt whether the user is sure about delete the listing. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
+- For the background image fade effect here: `https://www.digitalocean.com/community/tutorials/how-to-change-a-css-background-images-opacity`
