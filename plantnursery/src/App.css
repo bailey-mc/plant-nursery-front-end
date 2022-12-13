@@ -37,13 +37,25 @@
   }
 }
 
-/* body {
-  background-image: url('https://media.istockphoto.com/id/1009948130/vector/silhouettes-collection-of-decor-house-indoor-garden-plants-in-pots-and-stands-graphic-set.jpg?s=612x612&w=0&k=20&c=UbdVY6nVsO_i4x1QuHUZ28-Nmc82tIRPAgBK-WUKT04=');
-  background-size: 1000px;
+.demo-wrap {
+  position: relative;
+  z-index: -1;
+}
+.demo-wrap:before {
+  content: ' ';
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background-image: url('https://media.istockphoto.com/id/1351687680/photo/houseplant-strelitzia-nicolai.jpg?s=612x612&w=0&k=20&c=WdJElMQNmeMzRXKqNZeJ3AoEVMFooKWVsIDkULrH0KM=');
   background-repeat: no-repeat;
-  background-position: 50% 70%;
-  opacity: 0.;
-} */
+  background-position: 50% 0;
+  background-size: cover;
+  content: '';
+}
 
 /* image */
 img {
@@ -94,12 +106,22 @@ h2 {
   color: #9BA975; 
 }
 
+.about-us {
+  font-family: 'Mallanna', sans-serif;
+  font-size: 23px;
+  align-content: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+}
+
 /* hide / show buttons */
 .buttons-container {
   display: flex;
   justify-content: center;
   width: 100%;
   font-family: 'Mallanna', sans-serif;
+
 }
 
 .buttons-container button {
