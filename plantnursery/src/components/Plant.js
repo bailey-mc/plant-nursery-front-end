@@ -38,7 +38,7 @@ const handleDelete = () => {
           <span>In stock:</span> {props.plant.inStock}<br/>
 
           {props.currentUser.username ?
-            <button className="button" onClick={
+            <button className="button" onClick={()=>
               setShowEditForm(!showEditForm)}>
                 {showEditForm ? 'Hide' : 'Show'} Edit Form</button>
           :
