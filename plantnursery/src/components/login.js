@@ -38,8 +38,9 @@ function App(props) {
 
   return (
     <div className="formContainer">
-      <h1 className="formTitle">Login</h1>
-      <form onSubmit={handleLogin} class="inputForm">
+      <h2 className="formTitle">Log In</h2>
+      <div className="login-form-container">
+      <form className="inputForm" onSubmit={handleLogin}>
         <input
           type="text"
           placeholder="username"
@@ -61,9 +62,11 @@ function App(props) {
         ) : null}
         <input type="submit" value="Login" className="submitBtn" />
       </form>
-      <button onClick={handleCreateUserClick} className="accountBtn">
-        Need an account?
+      <button className="button" onClick={handleCreateUserClick}>
+        Create an account
       </button>
+      </div>
+      
     </div>
   );
 }
