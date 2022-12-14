@@ -169,13 +169,6 @@ function App() {
                       Add New Plant Listing
                     </button>
                   ) : null}
-                  <button
-                    onClick={() => {
-                      setShowPlants(false);
-                    }}
-                  >
-                    Add New Plant Listing
-                  </button>
                 </div>
                 {showPlants ? (
                   <div className="plants-container">
