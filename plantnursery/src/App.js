@@ -198,13 +198,13 @@ function App() {
                       Add New Plant Listing
                     </button>
                   ) : null}
-                  <button
+                  {/* <button
                     onClick={() => {
                       setShowPlants(false);
                     }}
                   >
                     Add New Plant Listing
-                  </button>
+                  </button> */}
                 </div>
                 {showPlants ? (
                   <div className="plants-container">
