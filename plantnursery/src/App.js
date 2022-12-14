@@ -34,44 +34,44 @@ function App() {
   const [toggleLogout, setToggleLogout] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
-  const handleCreateUser = (userObj) => {
-    axios
-      .post(
-        "https://ancient-lowlands-69118.herokuapp.com/users/createaccount",
-        userObj
-      )
-      .then((response) => {
-        if (response.data.username) {
-          console.log(response);
-          setToggleError(false);
-          setErrorMessage("");
-          setCurrentUser(response.data);
-          handleToggleLogout();
-        } else {
-          setErrorMessage(response.data);
-          setToggleError(true);
-        }
-      });
-  };
+  // const handleCreateUser = (userObj) => {
+  //   axios
+  //     .post(
+  //       "https://ancient-lowlands-69118.herokuapp.com/users/createaccount",
+  //       userObj
+  //     )
+  //     .then((response) => {
+  //       if (response.data.username) {
+  //         console.log(response);
+  //         setToggleError(false);
+  //         setErrorMessage("");
+  //         setCurrentUser(response.data);
+  //         handleToggleLogout();
+  //       } else {
+  //         setErrorMessage(response.data);
+  //         setToggleError(true);
+  //       }
+  //     });
+  // };
 
-  const handleLogin = (userObj) => {
-    console.log(userObj);
-    axios
-      .put("https://ancient-lowlands-69118.herokuapp.com/users/login", userObj)
-      .then((response) => {
-        if (response.data.username) {
-          console.log(response);
-          setToggleError(false);
-          setErrorMessage("");
-          setCurrentUser(response.data);
-          handleToggleLogout();
-        } else {
-          console.log(response);
-          setToggleError(true);
-          setErrorMessage(response.data);
-        }
-      });
-  };
+  // const handleLogin = (userObj) => {
+  //   console.log(userObj);
+  //   axios
+  //     .put("https://ancient-lowlands-69118.herokuapp.com/users/login", userObj)
+  //     .then((response) => {
+  //       if (response.data.username) {
+  //         console.log(response);
+  //         setToggleError(false);
+  //         setErrorMessage("");
+  //         setCurrentUser(response.data);
+  //         handleToggleLogout();
+  //       } else {
+  //         console.log(response);
+  //         setToggleError(true);
+  //         setErrorMessage(response.data);
+  //       }
+  //     });
+  // };
 
   const handleLogout = () => {
     console.log("......");
@@ -129,7 +129,6 @@ function App() {
             path="/login"
             element={
               <LoginForm
-                handleLogin={handleLogin}
                 toggleError={toggleError}
                 errorMessage={errorMessage}
                 setCurrentUser={setCurrentUser}
@@ -140,8 +139,10 @@ function App() {
             path="/createaccount"
             element={
               <NewUserForm
-                handleCreateUser={handleCreateUser}
                 toggleError={toggleError}
+                setToggleError={setToggleError}
+                setCurrentUser={setCurrentUser}
+                setErrorMessage={setErrorMessage}
                 errorMessage={errorMessage}
               />
             }
