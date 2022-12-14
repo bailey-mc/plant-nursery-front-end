@@ -15,7 +15,7 @@ function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
-  const [showEditForm, setShowEditForm] = useState(true);
+  // const [showEditForm, setShowEditForm] = useState(true);
 
   // const client = axios.create({baseURL: 'https://ancient-lowlands-69118.herokuapp.com/'})
 
