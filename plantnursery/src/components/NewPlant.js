@@ -117,7 +117,6 @@ const New = (props) => {
           <option value="Zone 13">Zone 13</option>
 
         </select>
-        {/* <input type="text" placeholder="Temp it needs" onChange={handleNewPlantTemperature}/> */}
         </label>
         <label>
         <span>Light required:</span> 
@@ -127,9 +126,7 @@ const New = (props) => {
             <option value="Partial Light">Partial Light</option>
             <option value="Full Light">Full Light</option>
           </select>
-        {/* <input type="text"
-          placeholder="Amt of light needed"
-          onChange={handleNewPlantLight}/> */}
+        
         </label>
         <label>
         <span>Water needed:</span> 
