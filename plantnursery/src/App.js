@@ -74,6 +74,7 @@ function App() {
   };
 
   const handleLogout = () => {
+    console.log("......");
     setCurrentUser({});
     handleToggleLogout();
     setToggleLoginForm(false);
@@ -103,40 +104,6 @@ function App() {
     <Router>
       <div>
         <div className="demo-wrap"></div>
-        {toggleLoginForm && toggleLogout === false ? (
-          <div class="appFormDiv">
-            {toggleLogin ? (
-              <LoginForm
-                handleLogin={handleLogin}
-                toggleError={toggleError}
-                errorMessage={errorMessage}
-              />
-            ) : (
-              <NewUserForm
-                handleCreateUser={handleCreateUser}
-                toggleError={toggleError}
-                errorMessage={errorMessage}
-              />
-            )}
-            <button onClick={handleToggleForm} class="accountBtn">
-              {toggleLogin ? "Need an account?" : "Already have an account?"}
-            </button>
-          </div>
-        ) : null}
-        {toggleLoginForm === false ? (
-          <button
-            onClick={() => {
-              setToggleLoginForm(true);
-            }}
-          >
-            Login
-          </button>
-        ) : null}
-        {toggleLogout ? (
-          <button onClick={handleLogout} class="logoutBtn">
-            Logout
-          </button>
-        ) : null}
         <div className="header">
           {/* empty div for spacing */}
           <div></div>
@@ -145,36 +112,40 @@ function App() {
               Plants Parad<i className="bi bi-tree"></i>se
             </h1>
           </div>
-          {/* <div className="buttons-container">
-          <button
-            onClick={() => {
-              setShowPlants(true);
-            }}
-          >
-            Show All Plants
-          </button>
-          <button
-            onClick={() => {
-              setShowPlants(false);
-            }}
-          >
-            Add New Plant Listing
-          </button>
-        </div> */}
           <div>
             <nav>
-              {/* <ul>
-              <li> */}
               <Link to="/">Home</Link>
-              {/* </li>
-              <li> */}
               <Link to="/about">About</Link>
-              {/* </li>
-            </ul> */}
+              {!currentUser.username ? (
+                <Link to="/login">Log In</Link>
+              ) : (
+                <Link onClick={handleLogout}>Log out</Link>
+              )}
             </nav>
           </div>
         </div>
         <Routes>
+          <Route
+            path="/login"
+            element={
+              <LoginForm
+                handleLogin={handleLogin}
+                toggleError={toggleError}
+                errorMessage={errorMessage}
+                setCurrentUser={setCurrentUser}
+              />
+            }
+          />
+          <Route
+            path="/createaccount"
+            element={
+              <NewUserForm
+                handleCreateUser={handleCreateUser}
+                toggleError={toggleError}
+                errorMessage={errorMessage}
+              />
+            }
+          />
           <Route path="/about" element={<About />} />
           <Route
             path="/"
