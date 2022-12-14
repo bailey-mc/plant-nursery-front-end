@@ -33,6 +33,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [toggleLogout, setToggleLogout] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [filter, setFilter] = useState(false)
 
   const handleCreateUser = (userObj) => {
     axios
@@ -80,14 +81,7 @@ function App() {
     // setToggleLoginForm(false);
   };
 
-  // const handleToggleForm = () => {
-  //   setToggleError(false);
-  //   if (toggleLogin === true) {
-  //     setToggleLogin(false);
-  //   } else {
-  //     setToggleLogin(true);
-  //   }
-  // };
+
 
   const handleToggleLogout = () => {
     if (toggleLogout) {
@@ -169,13 +163,24 @@ function App() {
                       Add New Plant Listing
                     </button>
                   ) : null}
-                  {/* <button
+             
+                  <div className="dropdown">
+                    <button class="dropbtn"
                     onClick={() => {
-                      setShowPlants(false);
-                    }}
-                  >
-                    Add New Plant Listing
-                  </button> */}
+                      setFilter(!filter);
+                    }}>
+                      Filter by:
+                    </button>
+                    {filter ?
+                    <p>filter modal popup</p>
+                    :
+                      null
+                    }
+                  </div>
+ 
+                 
+                  
+                  
                 </div>
                 {showPlants ? (
                   <div className="plants-container">
