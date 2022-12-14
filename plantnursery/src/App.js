@@ -15,7 +15,7 @@ function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
-  const [showEditForm, setShowEditForm] = useState(true);
+  // const [showEditForm, setShowEditForm] = useState(true);
 
   // const client = axios.create({baseURL: 'https://ancient-lowlands-69118.herokuapp.com/'})
 
@@ -169,6 +169,13 @@ function App() {
                       Add New Plant Listing
                     </button>
                   ) : null}
+                  {/* <button
+                    onClick={() => {
+                      setShowPlants(false);
+                    }}
+                  >
+                    Add New Plant Listing
+                  </button> */}
                 </div>
                 {showPlants ? (
                   <div className="plants-container">
