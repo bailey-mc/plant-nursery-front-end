@@ -27,8 +27,8 @@ function App() {
       });
   };
 
-  const [toggleLoginForm, setToggleLoginForm] = useState(false);
-  const [toggleLogin, setToggleLogin] = useState(true);
+  // const [toggleLoginForm, setToggleLoginForm] = useState(false);
+  // const [toggleLogin, setToggleLogin] = useState(true);
   const [toggleError, setToggleError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [toggleLogout, setToggleLogout] = useState(false);
@@ -77,17 +77,17 @@ function App() {
     console.log("......");
     setCurrentUser({});
     handleToggleLogout();
-    setToggleLoginForm(false);
+    // setToggleLoginForm(false);
   };
 
-  const handleToggleForm = () => {
-    setToggleError(false);
-    if (toggleLogin === true) {
-      setToggleLogin(false);
-    } else {
-      setToggleLogin(true);
-    }
-  };
+  // const handleToggleForm = () => {
+  //   setToggleError(false);
+  //   if (toggleLogin === true) {
+  //     setToggleLogin(false);
+  //   } else {
+  //     setToggleLogin(true);
+  //   }
+  // };
 
   const handleToggleLogout = () => {
     if (toggleLogout) {
