@@ -41,6 +41,7 @@
   position: relative;
   z-index: -1;
 }
+
 .demo-wrap:before {
   content: ' ';
   display: block;
@@ -59,13 +60,13 @@
 
 /* image */
 img {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
 }
 
 /* card styling */
 .card {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
   margin: 10px;
   border-width: 2px;
@@ -255,8 +256,13 @@ a:hover {
 
 /* new plant form */
 .new-plant-form {
-  max-width: 350px;
+  max-width: 400px;
   margin: auto;
+}
+
+.new-plant-form input,
+.new-plant-form select {
+  width: 185px;
 }
 
 .new-plant-form label {
@@ -275,7 +281,7 @@ a:hover {
 
 /* edit plant form */
 .edit-plant-form {
-  max-width: 350px;
+  max-width: 400px;
   margin: auto;
 }
 
@@ -285,9 +291,9 @@ a:hover {
   margin-bottom: 2px;
 }
 
-.edit-plant-form input {
-  width: 100%
-  /* color: #D4A373; */
+.edit-plant-form input,
+.edit-plant-form select {
+  width: 185px;
 }
 
 /* icon styling */
