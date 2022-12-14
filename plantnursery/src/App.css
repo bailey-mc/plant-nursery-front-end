@@ -41,6 +41,7 @@
   position: relative;
   z-index: -1;
 }
+
 .demo-wrap:before {
   content: ' ';
   display: block;
@@ -59,13 +60,13 @@
 
 /* image */
 img {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
 }
 
 /* card styling */
 .card {
-  max-width: 300px;
+  max-width: 400px;
   width: 100%;
   margin: 10px;
   border-width: 2px;
@@ -104,6 +105,66 @@ h2 {
   margin: 20px;
   font-family: 'Limelight', cursive;
   color: #9BA975; 
+}
+
+/* edit / delete button */
+.button {
+  border-radius: 10px;
+  border-width: 0px;
+  margin: 5px;
+  padding: 8px;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 20px;
+  background-color: #E9EDC9;
+}
+
+.button:hover {
+  background-color: #D4A373;
+  color: white;
+}
+/*  */
+
+/* log in form */
+.formTitle {
+  text-align: center;
+  margin: 20px;
+  font-family: 'Limelight', cursive;
+  color: #D4A373;
+}
+
+.login-form-container,
+.create-form-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputForm {
+  display: flex;
+  gap: 10px;
+  height: 46px;
+}
+
+/* log in button */
+.submitBtn {
+  border-radius: 10px;
+  border-width: 0px;
+  padding: 3px;
+  font-family: 'Mallanna', sans-serif;
+  font-size: 20px;
+  background-color: #E9EDC9;
+}
+
+.submitBtn:hover {
+  background-color: #D4A373;
+  color: white;
+}
+
+/* create new user button */
+.formContainer button {
+  text-align: center;
+  font-family: 'Mallanna', sans-serif;
 }
 
 /* about us */
@@ -193,27 +254,15 @@ a:hover {
 }
 /*  */
 
-/* edit / delete button */
-.button {
-  border-radius: 10px;
-  border-width: 0px;
-  margin: 5px;
-  padding: 8px;
-  font-family: 'Patrick Hand SC', cursive;
-  font-size: 20px;
-  background-color: #E9EDC9;
-}
-
-.button:hover {
-  background-color: #D4A373;
-  color: white;
-}
-/*  */
-
 /* new plant form */
 .new-plant-form {
-  max-width: 350px;
+  max-width: 400px;
   margin: auto;
+}
+
+.new-plant-form input,
+.new-plant-form select {
+  width: 185px;
 }
 
 .new-plant-form label {
@@ -232,7 +281,7 @@ a:hover {
 
 /* edit plant form */
 .edit-plant-form {
-  max-width: 350px;
+  max-width: 400px;
   margin: auto;
 }
 
@@ -242,9 +291,9 @@ a:hover {
   margin-bottom: 2px;
 }
 
-.edit-plant-form input {
-  width: 100%
-  /* color: #D4A373; */
+.edit-plant-form input,
+.edit-plant-form select {
+  width: 185px;
 }
 
 /* icon styling */

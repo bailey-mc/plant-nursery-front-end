@@ -33,45 +33,46 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [toggleLogout, setToggleLogout] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [filter, setFilter] = useState(false)
 
-  const handleCreateUser = (userObj) => {
-    axios
-      .post(
-        "https://ancient-lowlands-69118.herokuapp.com/users/createaccount",
-        userObj
-      )
-      .then((response) => {
-        if (response.data.username) {
-          console.log(response);
-          setToggleError(false);
-          setErrorMessage("");
-          setCurrentUser(response.data);
-          handleToggleLogout();
-        } else {
-          setErrorMessage(response.data);
-          setToggleError(true);
-        }
-      });
-  };
+  // const handleCreateUser = (userObj) => {
+  //   axios
+  //     .post(
+  //       "https://ancient-lowlands-69118.herokuapp.com/users/createaccount",
+  //       userObj
+  //     )
+  //     .then((response) => {
+  //       if (response.data.username) {
+  //         console.log(response);
+  //         setToggleError(false);
+  //         setErrorMessage("");
+  //         setCurrentUser(response.data);
+  //         handleToggleLogout();
+  //       } else {
+  //         setErrorMessage(response.data);
+  //         setToggleError(true);
+  //       }
+  //     });
+  // };
 
-  const handleLogin = (userObj) => {
-    console.log(userObj);
-    axios
-      .put("https://ancient-lowlands-69118.herokuapp.com/users/login", userObj)
-      .then((response) => {
-        if (response.data.username) {
-          console.log(response);
-          setToggleError(false);
-          setErrorMessage("");
-          setCurrentUser(response.data);
-          handleToggleLogout();
-        } else {
-          console.log(response);
-          setToggleError(true);
-          setErrorMessage(response.data);
-        }
-      });
-  };
+  // const handleLogin = (userObj) => {
+  //   console.log(userObj);
+  //   axios
+  //     .put("https://ancient-lowlands-69118.herokuapp.com/users/login", userObj)
+  //     .then((response) => {
+  //       if (response.data.username) {
+  //         console.log(response);
+  //         setToggleError(false);
+  //         setErrorMessage("");
+  //         setCurrentUser(response.data);
+  //         handleToggleLogout();
+  //       } else {
+  //         console.log(response);
+  //         setToggleError(true);
+  //         setErrorMessage(response.data);
+  //       }
+  //     });
+  // };
 
   const handleLogout = () => {
     console.log("......");
@@ -80,14 +81,7 @@ function App() {
     // setToggleLoginForm(false);
   };
 
-  // const handleToggleForm = () => {
-  //   setToggleError(false);
-  //   if (toggleLogin === true) {
-  //     setToggleLogin(false);
-  //   } else {
-  //     setToggleLogin(true);
-  //   }
-  // };
+
 
   const handleToggleLogout = () => {
     if (toggleLogout) {
@@ -129,7 +123,6 @@ function App() {
             path="/login"
             element={
               <LoginForm
-                handleLogin={handleLogin}
                 toggleError={toggleError}
                 errorMessage={errorMessage}
                 setCurrentUser={setCurrentUser}
@@ -140,8 +133,10 @@ function App() {
             path="/createaccount"
             element={
               <NewUserForm
-                handleCreateUser={handleCreateUser}
                 toggleError={toggleError}
+                setToggleError={setToggleError}
+                setCurrentUser={setCurrentUser}
+                setErrorMessage={setErrorMessage}
                 errorMessage={errorMessage}
               />
             }
@@ -169,13 +164,24 @@ function App() {
                       Add New Plant Listing
                     </button>
                   ) : null}
-                  {/* <button
+             
+                  <div className="dropdown">
+                    <button class="dropbtn"
                     onClick={() => {
-                      setShowPlants(false);
-                    }}
-                  >
-                    Add New Plant Listing
-                  </button> */}
+                      setFilter(!filter);
+                    }}>
+                      Filter by:
+                    </button>
+                    {filter ?
+                    <p>filter modal popup</p>
+                    :
+                      null
+                    }
+                  </div>
+ 
+                 
+                  
+                  
                 </div>
                 {showPlants ? (
                   <div className="plants-container">
