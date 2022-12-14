@@ -23,6 +23,7 @@ const New = (props) => {
     setNewPlantType(event.target.value);
   };
   const handleNewPlantTemperature = (event) => {
+    console.log(event.target.value);
     setNewPlantTemperature(event.target.value);
   };
   const handleNewPlantLight = (event) => {
@@ -85,7 +86,21 @@ const New = (props) => {
         <span>Type:</span> <input type="text" placeholder="Type" onChange={handleNewPlantType} />
         </label>
         <label>
-        <span>Temperature:</span> <input type="text" placeholder="Temp it needs" onChange={handleNewPlantTemperature}/>
+        <span>USDA Hardiness Zone:</span> 
+        <select onChange={handleNewPlantTemperature} >
+          <option>Hardiness Zone</option>
+          <option value="Zone 1">Hardiness Zone 1</option>
+          <option value="Zone 2">Hardiness Zone 2</option>
+          <option value="Zone 3">Zone 3</option>
+          <option value="Zone 4">Zone 4</option>
+          <option value="Zone 5">Zone 5</option>
+          <option value="Zone 6">Zone 6</option>
+          <option value="Zone 7">Zone 7</option>
+          <option value="Zone 8">Zone 8</option>
+          <option value="Zone 9">Zone 9</option>
+          <option value="Zone 10">Zone 10</option>
+        </select>
+        {/* <input type="text" placeholder="Temp it needs" onChange={handleNewPlantTemperature}/> */}
         </label>
         <label>
         <span>Light required:</span> <input type="text"
