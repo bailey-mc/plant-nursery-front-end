@@ -301,3 +301,15 @@ a:hover {
   color: #D4A373;
 }
 
+@media screen and (max-width: 400px) {
+  h1 {
+    
+  }
+  .card-body {
+    font-size: 1.5rem;
+  }
+
+  .button {
+    font-size: 1.5rem;
+  }
+}
