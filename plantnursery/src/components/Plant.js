@@ -1,4 +1,4 @@
-import axios, { AxiosHeaders } from "axios";
+import axios from "axios";
 import React, {useState} from "react";
 import Card from 'react-bootstrap/Card'
 import Modal from 'react-bootstrap/Modal'
@@ -27,7 +27,7 @@ const handleDelete = () => {
     <Card>
       <Card.Body>
         <div>
-          <img className="mb-2" src={props.plant.image} />
+          <img className="mb-2" src={props.plant.image} alt={props.plant.name}/>
           <span>Name:</span> {props.plant.name}<br/>
           <span>Botanical name:</span> {props.plant.botanicalName}<br/>
           <span>Type:</span> {props.plant.type}<br/>
@@ -38,8 +38,8 @@ const handleDelete = () => {
           <span>In stock:</span> {props.plant.inStock}<br/>
 
           {props.currentUser.username ?
-            <button className="button" onClick={() => {
-              {setShowEditForm(prevShowEditForm => !prevShowEditForm)}}}>
+            <button className="button" onClick={
+              setShowEditForm(!showEditForm)}>
                 {showEditForm ? 'Hide' : 'Show'} Edit Form</button>
           :
             null
