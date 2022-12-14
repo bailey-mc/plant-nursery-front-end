@@ -77,7 +77,7 @@ function App() {
     console.log("......");
     setCurrentUser({});
     handleToggleLogout();
-    setToggleLoginForm(false);
+    // setToggleLoginForm(false);
   };
 
   // const handleToggleForm = () => {
