@@ -301,15 +301,41 @@ a:hover {
   color: #D4A373;
 }
 
-@media screen and (max-width: 400px) {
-  h1 {
-    
-  }
+@media screen and (max-width: 700px) {
   .card-body {
     font-size: 1.5rem;
   }
 
+  .card-body span {
+    font-size: 2rem;
+  }
+
   .button {
     font-size: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+  .header > div:nth-child(1) {
+    display: none
+  }
+
+  .header > div:nth-child(3) {
+    width: 100%;
+  }
+
+  .header > div:nth-child(2) {
+    width: 100%;
+  }
+
+  .login-form-container,
+  .login-form-container .inputForm {
+    flex-direction: column;
+  }
+
+  .login-form-container .inputForm{
+    height: auto;
   }
 }
