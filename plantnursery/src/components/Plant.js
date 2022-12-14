@@ -27,7 +27,10 @@ const handleDelete = () => {
     <Card>
       <Card.Body>
         <div>
-          <img className="mb-2" src={props.plant.image} alt={props.plant.name}/>
+          {props.plant.image ? (
+            <img className="mb-2" src={props.plant.image} alt={props.plant.name}/>
+          ) : null }
+          
           <span>Name:</span> {props.plant.name}<br/>
           <span>Botanical name:</span> {props.plant.botanicalName}<br/>
           <span>Type:</span> {props.plant.type}<br/>

@@ -1,34 +1,69 @@
-import React, { useState } from 'react'
-import '../App.css';
+import React, { useState } from "react";
+import "../App.css";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 function App(props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const navigate = useNavigate();
 
-  const triggerLogin = (event) => {
+  const handleLogin = (event) => {
     event.preventDefault()
-    let userObj = {
+    const loginInfo = {
       username: username,
-      password: password
+      password: password,
     }
-    props.handleLogin(userObj)
-  }
+    axios
+      .put("https://ancient-lowlands-69118.herokuapp.com/users/login", loginInfo)
+      .then((response) => {
+        if (response.data.username) {
+          console.log(response);
+          // setToggleError(false);
+          // setErrorMessage("");
+          props.setCurrentUser(response.data);
+          navigate('/')
+        } else {
+          console.log(response);
+          // setToggleError(true);
+          // setErrorMessage(response.data);
+        }
+      });
+  };
 
+  const handleCreateUserClick = () => {
+    navigate("/createaccount");
+  };
 
   return (
     <div className="formContainer">
-      <h1 class='formTitle'>Login</h1>
-      <form onSubmit={triggerLogin} class='inputForm'>
-        <input type='text' placeholder='username' class='textInput' onChange={(event)=> {setUsername(event.target.value)}}/>
-        <input type='password' placeholder='password' class='textInput' onChange={(event)=> {setPassword(event.target.value)}}/>
-        {props.toggleError ?
-          <h5 class='errorMsg'>{props.errorMessage}</h5>
-          :
-          null
-        }
-        <input type='submit' value='Login' class='submitBtn'/>
+      <h1 className="formTitle">Login</h1>
+      <form onSubmit={handleLogin} class="inputForm">
+        <input
+          type="text"
+          placeholder="username"
+          className="textInput"
+          onChange={(event) => {
+            setUsername(event.target.value);
+          }}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          className="textInput"
+          onChange={(event) => {
+            setPassword(event.target.value);
+          }}
+        />
+        {props.toggleError ? (
+          <h5 className="errorMsg">{props.errorMessage}</h5>
+        ) : null}
+        <input type="submit" value="Login" className="submitBtn" />
       </form>
+      <button onClick={handleCreateUserClick} className="accountBtn">
+        Need an account?
+      </button>
     </div>
   );
 }
