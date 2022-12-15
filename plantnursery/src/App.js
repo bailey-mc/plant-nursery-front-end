@@ -9,15 +9,20 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import About from "./components/About";
 import LoginForm from "./components/login";
 import NewUserForm from "./components/newuser";
+import Filter from './components/filter'
 // import EditPlant from "./components/EditPlant";
 
 function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
-  // const [showEditForm, setShowEditForm] = useState(true);
 
-  // const client = axios.create({baseURL: 'https://ancient-lowlands-69118.herokuapp.com/'})
+  
+  const handleShowPlants = () => {
+    getPlants()
+    setShowPlants(true);
+  }
+
 
   const getPlants = () => {
     axios
@@ -27,60 +32,18 @@ function App() {
       });
   };
 
-  // const [toggleLoginForm, setToggleLoginForm] = useState(false);
-  // const [toggleLogin, setToggleLogin] = useState(true);
+ 
   const [toggleError, setToggleError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [toggleLogout, setToggleLogout] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [filter, setFilter] = useState(false)
-
-  // const handleCreateUser = (userObj) => {
-  //   axios
-  //     .post(
-  //       "https://ancient-lowlands-69118.herokuapp.com/users/createaccount",
-  //       userObj
-  //     )
-  //     .then((response) => {
-  //       if (response.data.username) {
-  //         console.log(response);
-  //         setToggleError(false);
-  //         setErrorMessage("");
-  //         setCurrentUser(response.data);
-  //         handleToggleLogout();
-  //       } else {
-  //         setErrorMessage(response.data);
-  //         setToggleError(true);
-  //       }
-  //     });
-  // };
-
-  // const handleLogin = (userObj) => {
-  //   console.log(userObj);
-  //   axios
-  //     .put("https://ancient-lowlands-69118.herokuapp.com/users/login", userObj)
-  //     .then((response) => {
-  //       if (response.data.username) {
-  //         console.log(response);
-  //         setToggleError(false);
-  //         setErrorMessage("");
-  //         setCurrentUser(response.data);
-  //         handleToggleLogout();
-  //       } else {
-  //         console.log(response);
-  //         setToggleError(true);
-  //         setErrorMessage(response.data);
-  //       }
-  //     });
-  // };
+ 
 
   const handleLogout = () => {
     console.log("......");
     setCurrentUser({});
     handleToggleLogout();
-    // setToggleLoginForm(false);
   };
-
 
 
   const handleToggleLogout = () => {
@@ -148,9 +111,7 @@ function App() {
               <>
                 <div className="buttons-container">
                   <button
-                    onClick={() => {
-                      setShowPlants(true);
-                    }}
+                    onClick={handleShowPlants}
                   >
                     Show All Plants
                   </button>
@@ -165,19 +126,10 @@ function App() {
                     </button>
                   ) : null}
              
-                  <div className="dropdown">
-                    <button class="dropbtn"
-                    onClick={() => {
-                      setFilter(!filter);
-                    }}>
-                      Filter by:
-                    </button>
-                    {filter ?
-                    <p>filter modal popup</p>
-                    :
-                      null
-                    }
-                  </div>
+  
+                  <Filter setPlants={setPlants} getPlants={getPlants}/>
+
+
  
                  
                   
