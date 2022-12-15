@@ -9,15 +9,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import About from "./components/About";
 import LoginForm from "./components/login";
 import NewUserForm from "./components/newuser";
+import Filter from './components/filter'
 // import EditPlant from "./components/EditPlant";
 
 function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
-  // const [showEditForm, setShowEditForm] = useState(true);
+  const [filters, setFilters] = useState();
 
-  // const client = axios.create({baseURL: 'https://ancient-lowlands-69118.herokuapp.com/'})
 
   const getPlants = () => {
     axios
@@ -27,8 +27,7 @@ function App() {
       });
   };
 
-  // const [toggleLoginForm, setToggleLoginForm] = useState(false);
-  // const [toggleLogin, setToggleLogin] = useState(true);
+ 
   const [toggleError, setToggleError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [toggleLogout, setToggleLogout] = useState(false);
@@ -165,19 +164,9 @@ function App() {
                     </button>
                   ) : null}
              
-                  <div className="dropdown">
-                    <button class="dropbtn"
-                    onClick={() => {
-                      setFilter(!filter);
-                    }}>
-                      Filter by:
-                    </button>
-                    {filter ?
-                    <p>filter modal popup</p>
-                    :
-                      null
-                    }
-                  </div>
+       
+                  <Filter setPlants={setPlants}/>
+
  
                  
                   
