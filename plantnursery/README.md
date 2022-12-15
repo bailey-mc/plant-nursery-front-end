@@ -1,11 +1,11 @@
 # Plant-Nursery-Front-End
 ## An app used to list different types of plants for sale.
----
+
 
 ## Technologies used:
 
 - Bootstrap, React Router, React, Express, MongoDB, Heroku
----
+
 ## Sources:
 
 - For the original react router nav link source here: `https://reacttraining.com/blog/react-router-v6-pre/`
@@ -33,7 +33,16 @@
 
 - For the background image fade effect here: `https://www.digitalocean.com/community/tutorials/how-to-change-a-css-background-images-opacity`
 
----
+
 ## Difficulties/Struggles:
 
 - Emon had difficulties using React Router. Learning to read the documentation and realizing that the verson she installed was the newer version as opposed to the version in the documentation she was looking at.
+
+## User Stories:
+- As a user, I want to land on a homepage that shows some inventory, has link a link to an about page, and allows me to filter the results I see.
+- As a user, I want to be able to filter the plants that I see by different categories.
+- As a user, when I am looking at a plant, I want to see relevant information about care instructions, price, and if it is in stock.
+- As a shop owner, I want to be able to login to access edit capabilities.
+- As a shop owner, I want to be able to add new items to inventory.
+- As a shopw owner, I want to be able to edit items already posted.
+- As a shop owner, I want to have the ability to delete items that we do not carry any more.
