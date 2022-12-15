@@ -10,12 +10,12 @@ const Filter = (props) => {
     const [zone, setZone] = useState(false);
     const [light, setLight] = useState(false);
     const [water, setWater] = useState(false);
-    const [price, setPrice] = useState(false);
-    const [typeFilters, setTypeFilters] = useState();
-    const [zoneFilters, setZoneFilters] = useState();
-    const [lightFilters, setLightFilters] = useState();
-    const [waterFilters, setWaterFilters] = useState();
-    const [priceFilters, setPriceFilters] = useState();
+    // const [price, setPrice] = useState(false);
+    // const [typeFilters, setTypeFilters] = useState();
+    // const [zoneFilters, setZoneFilters] = useState();
+    // const [lightFilters, setLightFilters] = useState();
+    // const [waterFilters, setWaterFilters] = useState();
+    // const [priceFilters, setPriceFilters] = useState();
     const [key, setKey] = useState()
     const [value, setValue] = useState()
 
