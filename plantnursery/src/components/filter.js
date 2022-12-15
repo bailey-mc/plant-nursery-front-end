@@ -10,7 +10,6 @@ const Filter = (props) => {
     const [zone, setZone] = useState(false);
     const [light, setLight] = useState(false);
     const [water, setWater] = useState(false);
-
     const [key, setKey] = useState()
     const [value, setValue] = useState()
 
@@ -68,7 +67,15 @@ const Filter = (props) => {
         axios
         .get(`https://ancient-lowlands-69118.herokuapp.com/plantnursery/${encodedKey}/${encodedValue}`)
         .then((response)=> {
-            props.setPlants(response.data)
+            console.log(response.data );
+            console.log('response data');
+            if (response.data.length > 0) {
+                props.setPlants(response.data )
+                props.setShowMessage(false)
+            } else {
+                props.setPlants([])
+                props.setShowMessage(true)
+            }
         })
 
 
@@ -81,8 +88,8 @@ const Filter = (props) => {
         <>
       <button className="filter-button"  onClick={handleShow}>
         Filter By:
-      </button>
-
+      </button> 
+      
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -328,6 +335,8 @@ const Filter = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+      
     </>
     )
 }
