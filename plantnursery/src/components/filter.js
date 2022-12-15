@@ -79,14 +79,14 @@ const Filter = (props) => {
 
     return (
         <>
-      <Button variant="primary" onClick={handleShow}>
-        Filter By...
+      <Button className="filter-button" variant="primary" onClick={handleShow}>
+        Filter By:
       </Button>
 
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Filter by...</Modal.Title>
+          <Modal.Title>Filter by :</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             <form>
