@@ -254,6 +254,11 @@ a:hover {
 }
 /*  */
 
+/* filter button */
+.filter-button {
+  color: black
+}
+
 /* new plant form */
 .new-plant-form {
   max-width: 400px;
@@ -299,6 +304,10 @@ a:hover {
 /* icon styling */
 .bi {
   color: #D4A373;
+}
+
+.filter-button {
+  color: black;
 }
 
 @media screen and (max-width: 700px) {
