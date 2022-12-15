@@ -306,7 +306,7 @@ a:hover {
   color: #D4A373;
 }
 
-.filter-button {
+.filter-button button {
   color: black;
 }
 
@@ -345,6 +345,15 @@ a:hover {
   }
 
   .login-form-container .inputForm{
+    height: auto;
+  }
+
+  .create-form-container,
+  .create-form-container .inputForm {
+    flex-direction: column;
+  }
+
+  .create-form-container .inputForm {
     height: auto;
   }
 }
