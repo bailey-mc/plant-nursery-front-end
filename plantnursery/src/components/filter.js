@@ -59,15 +59,17 @@ const Filter = (props) => {
         setKey('waterAmount')
     }
 
-    const handleSetPrice = () => {
-        setPrice(!price)
-        setType(false)
-        setZone(false)
-        setLight(false)
-        setWater(false)
-        setPriceFilters()
-        setKey('price')
-    }
+
+    // const handleSetPrice = () => {
+    //     setPrice(!price)
+    //     setType(false)
+    //     setZone(false)
+    //     setLight(false)
+    //     setWater(false)
+    //     setPriceFilters()
+    //     setKey('price')
+    // }
+
 
     const handleClose = () => {
         setShow(false);
@@ -99,6 +101,10 @@ const Filter = (props) => {
             props.setPlants(response.data)
         })
 
+
+        setShow(false)
+
+
     }
 
     return (
@@ -106,6 +112,7 @@ const Filter = (props) => {
       <Button variant="primary" onClick={handleShow}>
         Filter By...
       </Button>
+
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
