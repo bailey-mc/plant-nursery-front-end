@@ -35,6 +35,7 @@ const Filter = (props) => {
         setType(false)
         setZone(false)
         setWater(false)
+        setKey('requiresLight')
     }
 
     const handleSetWater = () => {
