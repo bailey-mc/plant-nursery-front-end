@@ -76,13 +76,13 @@ const New = (props) => {
   return (
     <div>
       <form className="new-plant-form" onSubmit={handleNewPlant}>
-        <label>
+        <label className="new-plant-info">
         <span>Name:</span> <input type="text" placeholder="Common Name" onChange={handleNewPlantName}/>
         </label>
-        <label>
+        <label className="new-plant-info">
         <span>Botanical name:</span> <input type="text" placeholder="Botanical Name" onChange={handleNewPlantBotanicalName}/>
         </label>
-        <label>
+        <label className="new-plant-info">
         <span>Type:</span>
           <select onChange={handleNewPlantType}>
             <option> Plant Type </option>
@@ -98,7 +98,7 @@ const New = (props) => {
           </select>
          {/* <input type="text" placeholder="Type" onChange={handleNewPlantType} /> */}
         </label>
-        <label>
+        <label className="new-plant-info">
         <span>USDA Hardiness Zone:</span> 
         <select onChange={handleNewPlantTemperature} >
           <option>Hardiness Zone</option>
@@ -115,10 +115,10 @@ const New = (props) => {
           <option value="Zone 11">Zone 11</option>
           <option value="Zone 12">Zone 12</option>
           <option value="Zone 13">Zone 13</option>
-
         </select>
         </label>
-        <label>
+        
+        <label className="new-plant-info">
         <span>Light required:</span> 
           <select onChange={handleNewPlantLight}>
             <option>Amt of Light</option>
@@ -126,9 +126,9 @@ const New = (props) => {
             <option value="Partial Light">Partial Light</option>
             <option value="Full Light">Full Light</option>
           </select>
-        
         </label>
-        <label>
+
+        <label className="new-plant-info">
         <span>Water needed:</span> 
           <select onChange={handleNewPlantWater}>
             <option>Amt of Water</option>
@@ -139,14 +139,14 @@ const New = (props) => {
           </select>
         {/* <input type="text" placeholder="Amt of water needed" onChange={handleNewPlantWater}/> */}
         </label>
-        <label>
+        <label className="new-plant-info">
         <span>Price:</span> <input type="number" placeholder="Price"
           onChange={handleNewPlantPrice}/>
         </label>
-        <label>
+        <label className="new-plant-info">
         <span>Image link:</span> <input type="text" placeholder="Image" onChange={handleNewPlantImage} />
         </label>
-        <label>
+        <label className="new-plant-info">
         <span># in stock:</span> <input type="number" placeholder="# in stock" onChange={handleNewPlantStock}/>
         </label>
         <br/>
