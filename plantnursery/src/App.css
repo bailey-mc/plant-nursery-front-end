@@ -254,6 +254,11 @@ a:hover {
 }
 /*  */
 
+/* filter button */
+.filter-button {
+  color: black
+}
+
 /* new plant form */
 .new-plant-form {
   max-width: 400px;
