@@ -66,7 +66,7 @@ const Filter = (props) => {
         console.log(encodedKey);
         console.log(value);
         axios
-        .post(`https://ancient-lowlands-69118.herokuapp.com/plantnursery/${encodedValue}`)
+        .get(`https://ancient-lowlands-69118.herokuapp.com/plantnursery/${encodedKey}/${encodedValue}`)
         .then((response)=> {
             props.setPlants(response.data)
         })
@@ -79,9 +79,9 @@ const Filter = (props) => {
 
     return (
         <>
-      <Button className="filter-button" variant="primary" onClick={handleShow}>
+      <button className="filter-button"  onClick={handleShow}>
         Filter By:
-      </Button>
+      </button>
 
 
       <Modal show={show} onHide={handleClose}>
