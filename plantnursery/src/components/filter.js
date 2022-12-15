@@ -28,8 +28,6 @@ const Filter = (props) => {
         setType(false)
         setLight(false)
         setWater(false)
-        
-        setZoneFilters()
         setKey('temperature')
     }
 
