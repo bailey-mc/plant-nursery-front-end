@@ -10,12 +10,7 @@ const Filter = (props) => {
     const [zone, setZone] = useState(false);
     const [light, setLight] = useState(false);
     const [water, setWater] = useState(false);
-    const [price, setPrice] = useState(false);
-    const [typeFilters, setTypeFilters] = useState();
-    const [zoneFilters, setZoneFilters] = useState();
-    const [lightFilters, setLightFilters] = useState();
-    const [waterFilters, setWaterFilters] = useState();
-    const [priceFilters, setPriceFilters] = useState();
+
     const [key, setKey] = useState()
     const [value, setValue] = useState()
 
@@ -24,8 +19,7 @@ const Filter = (props) => {
         setZone(false)
         setLight(false)
         setWater(false)
-        setPrice(false)
-        setTypeFilters()
+
         setKey('type')
     }
 
@@ -34,8 +28,6 @@ const Filter = (props) => {
         setType(false)
         setLight(false)
         setWater(false)
-        setPrice(false)
-        setZoneFilters()
         setKey('temperature')
     }
 
@@ -44,9 +36,6 @@ const Filter = (props) => {
         setType(false)
         setZone(false)
         setWater(false)
-        setPrice(false)
-        setLightFilters()
-        setKey('requiresLight')
     }
 
     const handleSetWater = () => {
@@ -54,20 +43,9 @@ const Filter = (props) => {
         setType(false)
         setZone(false)
         setLight(false)
-        setPrice(false)
-        setWaterFilters()
         setKey('waterAmount')
     }
 
-    const handleSetPrice = () => {
-        setPrice(!price)
-        setType(false)
-        setZone(false)
-        setLight(false)
-        setWater(false)
-        setPriceFilters()
-        setKey('price')
-    }
 
     const handleClose = () => {
         setShow(false);
@@ -75,12 +53,6 @@ const Filter = (props) => {
         setZone(false)
         setLight(false)
         setWater(false)
-        setPrice(false)
-        setTypeFilters()
-        setZoneFilters()
-        setLightFilters()
-        setWaterFilters()
-        setPriceFilters()
     }
     const handleShow = () => setShow(true);
     
@@ -99,6 +71,10 @@ const Filter = (props) => {
             props.setPlants(response.data)
         })
 
+
+        setShow(false)
+
+
     }
 
     return (
@@ -106,6 +82,7 @@ const Filter = (props) => {
       <Button className="filter-button" variant="primary" onClick={handleShow}>
         Filter By:
       </Button>
+
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

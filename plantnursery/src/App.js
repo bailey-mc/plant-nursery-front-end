@@ -16,7 +16,12 @@ function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
-  const [filters, setFilters] = useState();
+
+  
+  const handleShowPlants = () => {
+    getPlants()
+    setShowPlants(true);
+  }
 
 
   const getPlants = () => {
@@ -32,54 +37,13 @@ function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [toggleLogout, setToggleLogout] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [filter, setFilter] = useState(false)
-
-  // const handleCreateUser = (userObj) => {
-  //   axios
-  //     .post(
-  //       "https://ancient-lowlands-69118.herokuapp.com/users/createaccount",
-  //       userObj
-  //     )
-  //     .then((response) => {
-  //       if (response.data.username) {
-  //         console.log(response);
-  //         setToggleError(false);
-  //         setErrorMessage("");
-  //         setCurrentUser(response.data);
-  //         handleToggleLogout();
-  //       } else {
-  //         setErrorMessage(response.data);
-  //         setToggleError(true);
-  //       }
-  //     });
-  // };
-
-  // const handleLogin = (userObj) => {
-  //   console.log(userObj);
-  //   axios
-  //     .put("https://ancient-lowlands-69118.herokuapp.com/users/login", userObj)
-  //     .then((response) => {
-  //       if (response.data.username) {
-  //         console.log(response);
-  //         setToggleError(false);
-  //         setErrorMessage("");
-  //         setCurrentUser(response.data);
-  //         handleToggleLogout();
-  //       } else {
-  //         console.log(response);
-  //         setToggleError(true);
-  //         setErrorMessage(response.data);
-  //       }
-  //     });
-  // };
+ 
 
   const handleLogout = () => {
     console.log("......");
     setCurrentUser({});
     handleToggleLogout();
-    // setToggleLoginForm(false);
   };
-
 
 
   const handleToggleLogout = () => {
@@ -147,9 +111,7 @@ function App() {
               <>
                 <div className="buttons-container">
                   <button
-                    onClick={() => {
-                      setShowPlants(true);
-                    }}
+                    onClick={handleShowPlants}
                   >
                     Show All Plants
                   </button>
@@ -164,8 +126,9 @@ function App() {
                     </button>
                   ) : null}
              
-       
-                  <Filter setPlants={setPlants}/>
+  
+                  <Filter setPlants={setPlants} getPlants={getPlants}/>
+
 
  
                  
