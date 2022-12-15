@@ -165,7 +165,7 @@ function App() {
                   ) : null}
              
        
-                  <Filter setPlants={setPlants}/>
+                  <Filter setPlants={setPlants} getPlants={getPlants}/>
 
  
                  

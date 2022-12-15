@@ -99,6 +99,8 @@ const Filter = (props) => {
             props.setPlants(response.data)
         })
 
+        setShow(false)
+
     }
 
     return (
