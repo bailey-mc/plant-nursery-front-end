@@ -16,11 +16,13 @@ function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
+
   
   const handleShowPlants = () => {
     getPlants()
     setShowPlants(true);
   }
+
 
   const getPlants = () => {
     axios
@@ -124,8 +126,9 @@ function App() {
                     </button>
                   ) : null}
              
-       
+  
                   <Filter setPlants={setPlants} getPlants={getPlants}/>
+
 
  
                  

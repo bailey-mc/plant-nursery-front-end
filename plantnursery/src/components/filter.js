@@ -59,6 +59,7 @@ const Filter = (props) => {
         setKey('waterAmount')
     }
 
+
     // const handleSetPrice = () => {
     //     setPrice(!price)
     //     setType(false)
@@ -68,6 +69,7 @@ const Filter = (props) => {
     //     setPriceFilters()
     //     setKey('price')
     // }
+
 
     const handleClose = () => {
         setShow(false);
@@ -99,7 +101,9 @@ const Filter = (props) => {
             props.setPlants(response.data)
         })
 
+
         setShow(false)
+
 
     }
 
