@@ -125,15 +125,7 @@ function App() {
                       Add New Plant Listing
                     </button>
                   ) : null}
-             
-  
                   <Filter setPlants={setPlants} getPlants={getPlants}/>
-
-
- 
-                 
-                  
-                  
                 </div>
                 {showPlants ? (
                   <div className="plants-container">
