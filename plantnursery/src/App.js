@@ -16,11 +16,14 @@ function App() {
   // HOOKS
   const [plants, setPlants] = useState([]);
   const [showPlants, setShowPlants] = useState(true);
+  const [showMessage, setShowMessage] = useState(false);
+
 
   
   const handleShowPlants = () => {
     getPlants()
     setShowPlants(true);
+    setShowMessage(false)
   }
 
 
@@ -125,7 +128,7 @@ function App() {
                       Add New Plant Listing
                     </button>
                   ) : null}
-                  <Filter setPlants={setPlants} getPlants={getPlants}/>
+                  <Filter setPlants={setPlants} getPlants={getPlants} setShowMessage={setShowMessage}/>
                 </div>
                 {showPlants ? (
                   <div className="plants-container">
@@ -153,6 +156,13 @@ function App() {
           />
         </Routes>
       </div>
+      {showMessage?
+        <section className="emptysearch">
+            Oops! It looks like this section is empty! Check back later for more.
+        </section>
+            :
+            null
+        }
     </Router>
   );
 }
