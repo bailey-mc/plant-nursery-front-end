@@ -33,3 +33,7 @@
 
 - For the background image fade effect here: `https://www.digitalocean.com/community/tutorials/how-to-change-a-css-background-images-opacity`
 
+---
+## Difficulties/Struggles:
+
+- Emon had difficulties using React Router. Learning to read the documentation and realizing that the verson she installed was the newer version as opposed to the version in the documentation she was looking at.
