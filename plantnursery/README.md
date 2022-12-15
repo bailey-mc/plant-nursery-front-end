@@ -1,5 +1,9 @@
 # Plant-Nursery-Front-End
 ## An app used to list different types of plants for sale.
+- Backend hosted at https://ancient-lowlands-69118.herokuapp.com/
+- Backend GitHub Repo https://github.com/texasmami/PLant-Nursery-Back-End
+- Frontend hosted at https://sunshine-nursery.netlify.app/
+- Frontend GitHub Repo https://github.com/texasmami/plant-nursery-front-end
 
 
 ## Technologies used:
@@ -38,6 +42,9 @@
 
 - Emon had difficulties using React Router. Learning to read the documentation and realizing that the verson she installed was the newer version as opposed to the version in the documentation she was looking at.
 
+- Deploying with netlify gave Bailey some difficulties. She had to read over the documentation multiple times to understand what build specifications she should use. 
+    - Netlify also gave us it's fair share of failed builds. While annoying, Netlify does hold you accountable for keeping your code clean and making sure you use all of the variables, hooks, functions, etc in your code.
+
 ## User Stories:
 - As a user, I want to land on a homepage that shows some inventory, has link a link to an about page, and allows me to filter the results I see.
 - As a user, I want to be able to filter the plants that I see by different categories.
@@ -46,3 +53,4 @@
 - As a shop owner, I want to be able to add new items to inventory.
 - As a shopw owner, I want to be able to edit items already posted.
 - As a shop owner, I want to have the ability to delete items that we do not carry any more.
+- As a shop owner, I want to have the ability to log out and view the changes I've made to my site as a casual browser would.
